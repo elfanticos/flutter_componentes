@@ -8,11 +8,65 @@ class CardPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Card Page'),
       ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add_location),
-        onPressed: () {
-          Navigator.pop(context);
-        },
+      body: ListView(
+        padding: EdgeInsets.all(20.00),
+        children: <Widget>[
+          _cardTipo1(),
+          SizedBox(height: 30.0,),
+           _cardTipo2(),
+        ],
+      ),
+    );
+  }
+
+  Widget _cardTipo1() {
+    return Card(
+      elevation: 5.0,
+      child: Column(
+        children: <Widget>[
+          ListTile(
+            leading: Icon(Icons.photo_album, color: Colors.blue,),
+            title: Text('Soy el título de está tarjeta'),
+            subtitle: Text('Este texto es uno de prueba que quiero mostrarle para que vean como se muestra en el card'),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: <Widget>[
+              FlatButton(
+                child: Text('Cancelar'),
+                onPressed: () {},
+              ),
+              FlatButton(
+                child: Text('Ok'),
+                onPressed: () {},
+              )
+            ],
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget _cardTipo2() {
+    return Card(
+      child: Column(
+        children: <Widget>[
+          FadeInImage( 
+            image: NetworkImage('https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'),
+            placeholder: AssetImage('assets/jar-loading.gif'),
+            fadeInDuration: Duration(milliseconds: 200),
+            height: 300.0,
+            fit: BoxFit.cover,
+          ),
+          // Image(
+            // image: AssetImage('assets/paisaje_hd.jpg'), 
+            // image: NetworkImage('https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'),
+          // ),
+          Container(
+            padding: EdgeInsets.all(10.0),
+            child: Text('No tengo idea de que poner'),
+          ),
+        ],
       ),
     );
   }
