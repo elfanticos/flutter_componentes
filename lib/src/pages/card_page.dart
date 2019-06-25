@@ -21,7 +21,8 @@ class CardPage extends StatelessWidget {
 
   Widget _cardTipo1() {
     return Card(
-      elevation: 5.0,
+      elevation: 10.0,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.00)),
       child: Column(
         children: <Widget>[
           ListTile(
@@ -48,25 +49,43 @@ class CardPage extends StatelessWidget {
   }
 
   Widget _cardTipo2() {
-    return Card(
-      child: Column(
-        children: <Widget>[
-          FadeInImage( 
-            image: NetworkImage('https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'),
-            placeholder: AssetImage('assets/jar-loading.gif'),
-            fadeInDuration: Duration(milliseconds: 200),
-            height: 300.0,
-            fit: BoxFit.cover,
-          ),
-          // Image(
-            // image: AssetImage('assets/paisaje_hd.jpg'), 
-            // image: NetworkImage('https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'),
-          // ),
-          Container(
-            padding: EdgeInsets.all(10.0),
-            child: Text('No tengo idea de que poner'),
-          ),
-        ],
+    final Widget card = Container(
+                    child: Column(
+                      children: <Widget>[
+                        FadeInImage( 
+                          image: NetworkImage('https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'),
+                          placeholder: AssetImage('assets/jar-loading.gif'),
+                          fadeInDuration: Duration(milliseconds: 200),
+                          height: 300.0,
+                          fit: BoxFit.cover,
+                        ),
+                        // Image(
+                          // image: AssetImage('assets/paisaje_hd.jpg'), 
+                          // image: NetworkImage('https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'),
+                        // ),
+                        Container(
+                          padding: EdgeInsets.all(10.0),
+                          child: Text('No tengo idea de que poner'),
+                        ),
+                      ],
+                    ),
+                  );
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(30.00),
+        color: Colors.white,
+        boxShadow: <BoxShadow>[
+          BoxShadow(
+            color: Colors.black26,
+            blurRadius: 10.0,
+            spreadRadius: 2.0,
+            offset: Offset(2.0, 10.0),
+          )
+        ]
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(30.0),
+        child: card,
       ),
     );
   }
