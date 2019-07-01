@@ -20,6 +20,21 @@
             "ruta" : "animatedContainer",
             "icon" : "donut_large",
             "texto": "Animated Container"
+        },
+        {
+            "ruta" : "inputs",
+            "icon" : "input",
+            "texto": "Inputs"
+        },
+        {
+            "ruta" : "slider",
+            "icon" : "tune",
+            "texto": "Slider - Checks"
+        },
+        {
+            "ruta" : "list",
+            "icon" : "list",
+            "texto": "Listas y scroll"
         }
     ]
 }
