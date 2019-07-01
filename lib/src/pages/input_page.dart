@@ -177,9 +177,9 @@ class _InputPageState extends State<InputPage> {
 
   Widget _crearPersona() {
     return ListTile(
-      title: Text('Nombre es: $_nombre'),
-      subtitle: Text('Email: $_email'),
-      trailing: Text(_opcionSeleccionada),
+      title    : Text('Nombre es: $_nombre'),
+      subtitle : Text('Email: $_email'),
+      trailing : Text(_opcionSeleccionada),
     );
   }
 }
